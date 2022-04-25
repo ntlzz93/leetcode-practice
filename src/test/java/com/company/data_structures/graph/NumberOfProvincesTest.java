@@ -1,9 +1,14 @@
-package com.company.graph.disjoint.problems;
+package test.java.com.company.data_structures.graph;
 
-import com.company.graph.disjoint.OptimizedDisjointSet;
+import main.java.com.company.data_structures.graph.disjoint.excercises.NumberOfProvinces;
+import org.junit.Test;
 
-public class NumberOfProvinces {
-    public static void main(String[] args) {
+import static org.junit.Assert.assertEquals;
+
+public class NumberOfProvincesTest {
+
+    @Test
+    public void givenInputExample_returnNumberOfProvinces_shouldSuccess() {
         NumberOfProvinces numberOfProvinces = new NumberOfProvinces();
         int[][] isConnected1 = {
                 {1, 1, 0},
@@ -16,9 +21,6 @@ public class NumberOfProvinces {
                 {0, 1, 0},
                 {0, 0, 1}
         };
-
-        System.out.println(numberOfProvinces.findCircleNum(isConnected1));
-        System.out.println(numberOfProvinces.findCircleNum(isConnected2));
 
         int[][] isConnected3 = {
                 {1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
@@ -37,8 +39,6 @@ public class NumberOfProvinces {
                 {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}
         };
-        System.out.println(numberOfProvinces.findCircleNum(isConnected3));
-
         int[][] testCase107 = {
                 {1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
                 {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -56,18 +56,9 @@ public class NumberOfProvinces {
                 {0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1}
         };
-        System.out.println(numberOfProvinces.findCircleNum(testCase107));
-    }
-
-    public int findCircleNum(int[][] isConnected) {
-        OptimizedDisjointSet disjointSet = new OptimizedDisjointSet(isConnected.length);
-        for (int i = 0; i < isConnected.length; i++) {
-            for (int j = 0; j < isConnected.length; j++) {
-                if (isConnected[i][j] == 1) {
-                    disjointSet.union(i, j);
-                }
-            }
-        }
-        return disjointSet.getCount();
+        assertEquals(2, numberOfProvinces.findCircleNum(isConnected1));
+        assertEquals(3, numberOfProvinces.findCircleNum(isConnected2));
+        assertEquals(8, numberOfProvinces.findCircleNum(isConnected3));
+        assertEquals(3, numberOfProvinces.findCircleNum(testCase107));
     }
 }

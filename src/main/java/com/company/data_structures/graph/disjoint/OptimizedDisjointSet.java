@@ -1,4 +1,4 @@
-package com.company.graph.disjoint;
+package main.java.com.company.data_structures.graph.disjoint;
 
 public class OptimizedDisjointSet {
     private int[] root;
