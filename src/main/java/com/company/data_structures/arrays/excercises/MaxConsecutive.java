@@ -1,4 +1,4 @@
-package main.java.com.company.data_structures.arrays.excercises;
+package com.company.data_structures.arrays.excercises;
 
 import java.util.ArrayList;
 import java.util.Comparator;

@@ -1,6 +1,6 @@
-package test.java.com.company.data_structures.arrays;
+package com.company.data_structures.arrays;
 
-import main.java.com.company.data_structures.arrays.excercises.MaxConsecutive;
+import com.company.data_structures.arrays.excercises.MaxConsecutive;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

@@ -1,6 +1,6 @@
-package main.java.com.company.data_structures.graph.disjoint.excercises;
+package com.company.data_structures.graph.disjoint.excercises;
 
-import main.java.com.company.data_structures.graph.disjoint.OptimizedDisjointSet;
+import com.company.data_structures.graph.disjoint.OptimizedDisjointSet;
 
 public class NumberOfProvinces {
     public int findCircleNum(int[][] isConnected) {

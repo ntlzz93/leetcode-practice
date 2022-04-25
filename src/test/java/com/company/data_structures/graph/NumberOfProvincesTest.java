@@ -1,6 +1,6 @@
-package test.java.com.company.data_structures.graph;
+package com.company.data_structures.graph;
 
-import main.java.com.company.data_structures.graph.disjoint.excercises.NumberOfProvinces;
+import com.company.data_structures.graph.disjoint.excercises.NumberOfProvinces;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
