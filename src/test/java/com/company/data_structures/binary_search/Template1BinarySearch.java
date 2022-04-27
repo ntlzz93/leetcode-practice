@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class Template1BinarySearch extends NumbericBinarySearch{
+public class Template1BinarySearch{
 
     @Test
     public void givenInput_numberic_shouldSuccess() {
@@ -22,24 +22,14 @@ public class Template1BinarySearch extends NumbericBinarySearch{
 
     @Test
     public void  givenInput_guessGame_shouldSuccess(){
-        assertEquals(10, guessNumber(10));
-        assertEquals(10, guessNumber(20));
-        assertEquals(10, guessNumber(15));
+        assertEquals(10, NumbericBinarySearch.guessNumber(10));
+        assertEquals(10, NumbericBinarySearch.guessNumber(20));
+        assertEquals(10, NumbericBinarySearch.guessNumber(15));
     }
 
-    public int guessNumber(int n) {
-        int left = 1; int pivot = 0;
-        int right = n;
-        while(left <= right) {
-            pivot = left + (right -left) /2;
-            int res = guess(pivot);
-            if (res == 0) return pivot;
-            if(res == 1) {
-                left  = pivot  +1;
-            }else {
-                right  = pivot - 1;
-            }
-        }
-        return -1;
+    @Test
+    public void givenInput_searchRotated_shouldSuccess(){
+        int[] nums = new int[]{4,5,6,7,0,1,2};
+        assertEquals(4, NumbericBinarySearch.searchRotated(nums, 0));
     }
 }
