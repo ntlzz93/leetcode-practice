@@ -32,4 +32,11 @@ public class NumbericBinarySearch {
         }
         return right;
     }
+
+    public int guess(int num) {
+        int pick =  10;
+        if (num == pick) return 0;
+        if (num > pick) return -1;
+        return 1;
+    }
 }
