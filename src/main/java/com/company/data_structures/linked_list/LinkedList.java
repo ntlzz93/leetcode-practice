@@ -1,7 +1,5 @@
 package com.company.data_structures.linked_list;
 
-import com.company.data_structures.Node;
-
 public class LinkedList {
     private Node head;
     private Node tail;
@@ -29,6 +27,7 @@ public class LinkedList {
         }
         tail = newNode;
     }
+
     /*Floyd's Tortoise and Hare algorithm*/
     public Node findMiddleNode() {
         Node slow = head;
@@ -40,6 +39,7 @@ public class LinkedList {
         }
         return slow;
     }
+
     /*Floyd's Tortoise and Hare algorithm*/
     public boolean hasLoop() {
         Node slow = head;
@@ -51,5 +51,23 @@ public class LinkedList {
             if (slow == fast) return true;
         }
         return false;
+    }
+
+    public Node findKthFromEnd(int k) {
+        Node slow = head;
+        Node fast = head;
+
+        for (int i = 0; i < k; i++) {
+            if (fast == null) {
+                return null;
+            }
+            fast = fast.getNext();
+        }
+
+        while (fast != null) {
+            slow = slow.getNext();
+            fast = fast.getNext();
+        }
+        return slow;
     }
 }

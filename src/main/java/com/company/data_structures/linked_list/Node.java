@@ -1,4 +1,4 @@
-package com.company.data_structures;
+package com.company.data_structures.linked_list;
 
 public class Node {
     private int value;
