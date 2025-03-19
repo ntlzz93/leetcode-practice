@@ -52,6 +52,6 @@ public class BinaryTree {
         display(node);
     }
     public void display(Node node) {
-        System.out.println(node.item + "->");
+        System.out.print(node.item + "->");
     }
 }

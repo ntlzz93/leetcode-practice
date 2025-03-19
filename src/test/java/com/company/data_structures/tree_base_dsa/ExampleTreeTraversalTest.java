@@ -17,5 +17,23 @@ public class ExampleTreeTraversalTest {
 
         System.out.println("\nPostorder traversal");
         binaryTree.postOrderTraversal(binaryTree.root);
+
+        DFS dfs = new DFS();
+        dfs.root = new Node(1);
+        dfs.root.left = new Node(2);
+        dfs.root.right = new Node(3);
+        dfs.root.left.left = new Node(4);
+        dfs.root.left.right = new Node(5);
+        dfs.root.right.right = new Node(6);
+
+        System.out.println("\nPreorder traverse ");
+        dfs.traversePreorder(dfs.root);
+
+        System.out.println("\nInorder traverse ");
+        dfs.traverseInorder(dfs.root);
+
+        System.out.println("\nPostorder traverse ");
+        dfs.traversePostorder(dfs.root);
+
     }
 }
