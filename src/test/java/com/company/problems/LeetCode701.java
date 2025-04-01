@@ -2,8 +2,7 @@ package com.company.problems;
 
 import org.junit.Test;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import static com.company.problems.BFS.disPlay;
 
 public class LeetCode701 {
 
@@ -16,21 +15,6 @@ public class LeetCode701 {
         root.left.right = new TreeNode(3);
         TreeNode result = insertIntoBST(root, 5);
         disPlay(result);
-    }
-
-    private void disPlay(TreeNode root) {
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            TreeNode current = queue.poll();
-            System.out.print(current.val + " -> ");
-            if (current.left != null) {
-                queue.add(current.left);
-            }
-            if (current.right != null) {
-                queue.add(current.right);
-            }
-        }
     }
 
     public TreeNode insertIntoBST(TreeNode root, int val) {

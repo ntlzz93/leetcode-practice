@@ -13,6 +13,23 @@ public class BinarySearchTree {
         return root;
     }
 
+    public Node delete(Node root, int value) {
+        if (root == null) return null;
+        if (value == root.item) {
+            if (root.left == null) return root.right;
+            if (root.right == null) return root.left;
+
+            root.left = delete(root.right, value);
+            return root;
+        }
+        if (value < root.item) {
+            root.left = delete(root.left, value);
+            return root;
+        }
+        root.right = delete(root.right, value);
+        return root;
+    }
+
     public void traverseInorder(Node node) {
         DFS dfs = new DFS();
         dfs.traverseInorder(node);
